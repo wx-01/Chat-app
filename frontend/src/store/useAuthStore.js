@@ -1,5 +1,6 @@
 import {create} from 'zustand';
 import {axiosInstance} from '../lib/axios.js';
+import SignUp from '../pages/Signup.jsx';
 
 export const useAuthStore = create((set) => ({
     authUser: null,

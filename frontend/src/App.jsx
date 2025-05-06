@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import{Routes,Route} from 'react-router-dom'
+import{Routes,Route, Navigate} from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
@@ -8,21 +8,30 @@ import Settings from './pages/Settings'
 import Navbarr from './components/Navbar'
 import { useAuthStore } from './store/useAuthStore'
 
+import {Loader} from 'lucide-react'
+
 const App = () => {
- const{authUser,checkAuth}= useAuthStore()
+ const{authUser,checkAuth ,isCheckingAuth}= useAuthStore()
 
  useEffect(() =>{
    checkAuth()
  },[checkAuth])
  console.log(authUser)  
+
+if(isCheckingAuth && !authUser){	
+	return(
+		<div className="flex justify-center items-center h-screen">
+			<Loader className ="size-10 animate-spin"/>
+		</div>
+	)}
   return (
     <div>
       <Navbarr />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/signup' element={<Signup />} />
-        <Route path='/profile' element={<Profile />} />
+        <Route path='/' element={authUser ? <Home /> :<Navigate to='/login'/>} />
+        <Route path='/login' element={!authUser ?<Login />:<Navigate to='/'/>} />
+        <Route path='/signup' element={!authUser ?<Signup />:<Navigate to='/'/>} />
+        <Route path='/profile' element={authUser ? <Profile /> :<Navigate to='/login'/>} />
         <Route path='/settings' element={<Settings />} />
         <Route path='*' element={<h1>404 Not Found</h1>} />
         {/* Add more routes as needed */}
