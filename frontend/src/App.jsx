@@ -7,6 +7,7 @@ import Profile from './pages/Profile'
 import Settings from './pages/Settings'
 import Navbarr from './components/Navbar'
 import { useAuthStore } from './store/useAuthStore'
+import { Toaster } from 'react-hot-toast';
 
 import {Loader} from 'lucide-react'
 
@@ -37,6 +38,11 @@ if(isCheckingAuth && !authUser){
         {/* Add more routes as needed */}
       </Routes>
       
+      <Toaster
+  position="top-right"
+  reverseOrder={false}
+/>
+
     </div>
   )
 }
