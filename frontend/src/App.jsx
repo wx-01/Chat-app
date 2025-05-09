@@ -9,7 +9,7 @@ import Navbarr from './components/Navbar'
 import { useAuthStore } from './store/useAuthStore'
 import { Toaster } from 'react-hot-toast';
 
-import {Loader} from 'lucide-react'
+import {Blend, Loader} from 'lucide-react'
 
 const App = () => {
  const{authUser,checkAuth ,isCheckingAuth}= useAuthStore()
@@ -22,7 +22,7 @@ const App = () => {
 if(isCheckingAuth && !authUser){	
 	return(
 		<div className="flex justify-center items-center h-screen">
-			<Loader className ="size-10 animate-spin"/>
+			<Blend className ="size-10 animate-spin"/>
 		</div>
 	)}
   return (

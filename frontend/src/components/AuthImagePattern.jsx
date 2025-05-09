@@ -4,10 +4,10 @@ const AuthImagePattern = ({title,subtitle}) => {
   return (
     <div className='hidden lg:flex  justify-center items-center  bg-base-100 p-15 '>
           <div className='max-w-md   text-center w-full'>
-                    <div className='grid grid-cols-3 gap-3  p-7'>
+                    <div className='grid grid-cols-3 gap-2  p-7'>
                               {[...Array(9)].map((_, i) => (
                                         <div key={i} 
-                                        className={`aspect-square bg-neutral/50 rounded-2xl 
+                                        className={`aspect-square bg-neutral/55 rounded-2xl 
                                                   ${i % 2 === 0 ? "animate-pulse": "" }`} />
                               ))}
                     </div>

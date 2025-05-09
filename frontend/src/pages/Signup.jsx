@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useAuthStore } from "../store/useAuthStore";
 import {
+  Blend,
   Eye,
   EyeOff,
   Loader2,
   Lock,
   Mail,
   MessageSquare,
-  User,
-} from "lucide-react";
+  User,} from "lucide-react";
 import { Link } from "react-router-dom";
 import AuthImagePattern from "../components/AuthImagePattern";
 import toast from "react-hot-toast";
@@ -133,10 +133,10 @@ const SignUp = () => {
             >
               {isSigning ? (
                 <>
-                  <Loader2 className="size-5 animate-spin mr-2" /> Loading...
+                  <Blend className="size-5 animate-spin mr-2" /> Loading...
                 </>
               ) : (
-                "Create Accout"
+                "Create Account"
               )}
             </button>
             </fieldset>
