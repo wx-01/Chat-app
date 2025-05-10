@@ -59,6 +59,7 @@ export const useAuthStore = create((set) => ({
         } catch (error) {
           toast.error(error.response.data.message);
         }
-      }
+      },
      
+      
 }));
