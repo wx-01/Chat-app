@@ -8,7 +8,8 @@ import {
   Lock,
   Mail,
   MessageSquare,
-  User,} from "lucide-react";
+  User,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import AuthImagePattern from "../components/AuthImagePattern";
 import toast from "react-hot-toast";
@@ -25,12 +26,13 @@ const SignUp = () => {
   const validateForm = () => {
     if (!formData.fullName.trim()) return toast.error("Full name is required");
     if (!formData.email.trim()) return toast.error("Email is required");
-    if (!/\S+@\S+\.\S+/.test(formData.email)) return toast.error("Invalid email format");
+    if (!/\S+@\S+\.\S+/.test(formData.email))
+      return toast.error("Invalid email format");
     if (!formData.password) return toast.error("Password is required");
-    if (formData.password.length < 6) return toast.error("Password must be at least 6 characters");
+    if (formData.password.length < 6)
+      return toast.error("Password must be at least 6 characters");
 
     return true;
-
   };
 
   const handleSubmit = (e) => {
@@ -127,18 +129,18 @@ const SignUp = () => {
                 </button>
               </div>
               <button
-              type="submit"
-              className="btn btn-primary w-full mt-2"
-              disabled={isSigning}
-            >
-              {isSigning ? (
-                <>
-                  <Blend className="size-5 animate-spin mr-2" /> Loading...
-                </>
-              ) : (
-                "Create Account"
-              )}
-            </button>
+                type="submit"
+                className="btn btn-primary w-full mt-2"
+                disabled={isSigning}
+              >
+                {isSigning ? (
+                  <>
+                    <Blend className="size-5 animate-spin mr-2" /> Loading...
+                  </>
+                ) : (
+                  "Create Account"
+                )}
+              </button>
             </fieldset>
           </form>
           <div className="text-center mb-2">
@@ -151,11 +153,11 @@ const SignUp = () => {
           </div>
         </div>
       </div>
-       {/* right side */}
-       <AuthImagePattern 
-       title="Join Now!"
-       subtitle="Connect with friends, share friends and stay in touch with your loved ones."
-        />
+      {/* right side */}
+      <AuthImagePattern
+        title="Join Now!"
+        subtitle="Connect with friends, share friends and stay in touch with your loved ones."
+      />
     </div>
   );
 };
