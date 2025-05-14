@@ -7,7 +7,6 @@ import MessageSkeleton from './skeletons/MessageSkeleton';
 const Chatcontainer = () => {
 
   const{messages,getMessages,isMessagesLoading,selectedUser}=useChatStore();
-
   useEffect(()=>{
     getMessages(selectedUser._id)
   },[selectedUser._id , getMessages])
