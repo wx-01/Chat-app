@@ -35,7 +35,7 @@ const MessageInput = () => {
     try {
       await sendMessages({
         text: text.trim(),
-        Image : imagePreview,
+        image : imagePreview,
       });
 
       // Clear form
@@ -48,7 +48,7 @@ const MessageInput = () => {
   };
 
   return (
-    <div className="p-4 w-full">
+      <div className="p-4 w-full">
       {imagePreview && (
         <div className="mb-3 flex items-center gap-2">
           <div className="relative">

@@ -6,7 +6,7 @@ import { useAuthStore } from '../store/useAuthStore';
 
 const Sidebar = () => {
   const{getUsers, users, selectedUser, setSelectedUser, isUsersLoading}=useChatStore();
-const{onlineUsers}=useAuthStore();
+const{onlineUsers ,authUser }=useAuthStore();
 
   useEffect(()=>{
     getUsers()
@@ -21,7 +21,7 @@ const{onlineUsers}=useAuthStore();
       <div className="border-b border-base-300 w-full p-5">
         <div className="flex items-center gap-2">
           <Users className="size-6" />
-          <span className="font-medium hidden lg:block">Contacts</span>
+          <span className="font-medium hidden lg:block">{authUser.fullName}</span>
         </div>
         {/* TODO: Online filter toggle */}
         </div>
