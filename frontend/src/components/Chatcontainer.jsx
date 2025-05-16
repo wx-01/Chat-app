@@ -6,7 +6,7 @@ import MessageInput from './MessageInput';
 import MessageSkeleton from './skeletons/MessageSkeleton';
 import { useAuthStore } from "../store/useAuthStore";
 import { formatMessageTime } from '../lib/utils';
-const Chatcontainer = () => {
+const ChatContainer = () => {
 
    const {
     messages,
@@ -89,4 +89,4 @@ const Chatcontainer = () => {
   );
 }
 
-export default Chatcontainer
+export default ChatContainer
