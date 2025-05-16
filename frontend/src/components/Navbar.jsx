@@ -8,7 +8,7 @@ import { useAuthStore } from '../store/useAuthStore'
 const Navbar = () => {
   const{authUser,logOut}= useAuthStore()
   return (
-    <header className='border-b-2 border-base-300 fixed w-full top-0 z-40 backdroop-blur-lg bg-base-100'>
+    <header className='border-b-2 border-primary fixed w-full top-0 z-40 backdroop-blur-lg bg-base-100'>
       <div className='container mx-auto h-14 px-4'>
         <div className='flex items-center justify-between h-full '>
           <div className='flex items-center gap-8'>

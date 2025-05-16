@@ -47,11 +47,11 @@ const SignUp = () => {
     <div className="min-h-screen grid lg:grid-cols-2">
       {/* left side */}
       <div className="bg-base-200 flex flex-col justify-center items-center p-6 sm:p-12">
-        <div className="bg-base-100 border-1 border-base-300 w-full max-w-md space-y-8 rounded-4xl">
+        <div className="bg-base-100 border-1 border-primary w-full max-w-md space-y-8 rounded-4xl">
           {/*logo */}
           <div className="text-center mb-8">
             <div className="flex flex-col items-center gap-2 group/side">
-              <div className="size-12 rounded-xl bg-base-300/10 pt-1 flex items-center justify-center group-hover/side:bg-base-300/20 transition-colors">
+              <div className="size-12 rounded-xl bg-primary/9 pt-1 flex items-center justify-center group-hover/side:bg-primary/20 transition-colors">
                 <MessageSquare className="size-9 text-base-300" />
               </div>
               <h1 className="text-2xl font-bold mt-2">Create Account</h1>
