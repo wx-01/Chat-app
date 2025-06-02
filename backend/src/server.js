@@ -4,9 +4,11 @@ import {connectDB} from "./lib/db.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import path from "path";
+import { app, server } from "./lib/socket.js";
+import authRoutes from "./routes/auth.route.js";
+import messageRoutes from "./routes/message.route.js";
 
 dotenv.config();
-import { app, server } from "./lib/socket.js";
 
 app.use(express.json({ limit: '10mb' }));
 app.use(cookieParser());
@@ -18,8 +20,6 @@ const PORT = process.env.PORT || 8081;
 const __dirname = path.resolve();
 
 
-import authRoutes from "./routes/auth.route.js";
-import messageRoutes from "./routes/message.route.js";
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);

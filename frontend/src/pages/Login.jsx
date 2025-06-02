@@ -21,7 +21,7 @@ const Login = () => {
       email: "",
       password: "",
     });
-    const { logIn, isLoging } = useAuthStore();
+    const {logIn, isLoging } = useAuthStore();
   
   
     const handleSubmit = (e) => {
